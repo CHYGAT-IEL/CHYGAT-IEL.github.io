@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>赛博战争俱乐部介绍</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #video-mask {
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s;
+    }
+    #video-mask.hide {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s;
+    }
+    #intro-video {
+      max-width: 100vw;
+      max-height: 100vh;
+      background: #000;
+    }
+    #main-content {
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+    #main-content.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="video-mask">
+    <video id="intro-video" src="intro.mp4" autoplay muted playsinline></video>
+  </div>
+
+  <div class="container" id="main-content">
+    <header class="header">
+      <div class="banner">
+        <img src="logo.jpg" alt="赛博战争LOGO" class="server-logo">
+        <h1>赛博战争俱乐部</h1>
+        <p class="subtitle">CYBER WAR CLUB</p>
+        <a href="https://space.bilibili.com" target="_blank" class="bili-btn">官方账号</a>
+      </div>
+    </header>
+    <main class="main-content">
+      <section class="features">
+        <h2></h2>
+        <div class="features-list">
+          <a class="feature-item">
+            <span class="icon">⚡</span>
+            <h3>极速体验</h3>
+            <p>高性能服务器,高宽带,极速连接,</p>
+          </a>
+          <a class="feature-item" data-tooltip="优秀的OP团队,点击查看详情" href="Branch/OPintroduction.html">
+            <span class="icon">🛡️</span>
+            <h3>团队介绍</h3>
+            <p>24小时OP值班,拥有严格的执法,保障游玩时的体验</p>
+          </a>
+          <a class="feature-item" data-tooltip="点击查看插件介绍" href="Branch/Pluginintroduction.html">
+            <span class="icon">⚙️</span>
+            <h3>丰富插件</h3>
+            <p>丰富的插件与每日奖励,可用于开启任何功能</p>
+          </a>
+          <a class="feature-item" data-tooltip="点击查看服务器规则" href="Branch/Server rules.html">
+            <span class="icon">📋</span>
+            <h3>服务器规则</h3>
+            <p>服规就是服规,我没想到写什么,这条我就乱写吧。</p>
+          </a>
+        </div>
+      </section>
+      <section class="server-details" id="join">
+        <h2>服务器信息</h2>
+        <div class="info-grid">
+        <div>
+        <strong>服务器名称：</strong>
+        <span>『CYBER』赛博战争俱乐部</span>
+      </div>
+      <div>
+        <strong>YY：</strong>
+        <a href="https://yy.com/708627" target="_blank">708627 (点击进入)</a>
+      </div>
+        <div>
+        <strong>QQ玩家1群：</strong>
+        <a href="https://qm.qq.com/cgi-bin/qm/qr?k=833835637" target="_blank">833835637 (点击进入)</a>
+        </div>
+      <div>
+    <strong>QQ玩家2群：</strong>
+    <a href="https://qm.qq.com/cgi-bin/qm/qr?k=1026204747" target="_blank">1026204747 (点击进入)</a>
+  </div>
+</div>
+      </section>
+    </main>
+    <footer class="footer">
+      &copy;2025 本网站由 CYBER WAR CLUB|赛博战争俱乐部 开发并拥有所有权 | <a href="#" target="_blank">关于我们</a>
+    </footer>
+  </div>
+  <script>
+    const video = document.getElementById('intro-video');
+    const mask = document.getElementById('video-mask');
+    const main = document.getElementById('main-content');
+    const transitionTime = 600; 
+
+    function showMain() {
+      mask.classList.add('hide');
+      main.classList.add('show');
+      setTimeout(() => {
+        mask.style.display = 'none';
+      }, transitionTime);
+    }
+
+    video.onended = showMain;
+    video.onerror = video.onabort = showMain;
+
+    mask.addEventListener('click', showMain);
+  </script>
+</body>
+</html>
