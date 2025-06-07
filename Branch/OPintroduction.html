@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>服务器管理团队介绍</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../Branch/opcard.css">
+  <link rel="stylesheet" href="../mini/mini-player.css">
+  <style>
+    #loading-page {
+      position: fixed;
+      z-index: 10000;
+      inset: 0;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s;
+    }
+
+    #loading-page.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .uiverse-loader-container {
+      position: relative;
+      width: 96px;
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .uiverse-loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      height: 96px;
+      width: 96px;
+      animation: rotate_3922 1.2s linear infinite;
+      background-color: #9b59b6;
+      background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+    }
+
+    .uiverse-loader span {
+      position: absolute;
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+      background-color: #9b59b6;
+      background-image: linear-gradient(#9b59b6, #84cdfa, #5ad1cd);
+    }
+
+    .uiverse-loader span:nth-of-type(1) {
+      filter: blur(5px);
+    }
+
+    .uiverse-loader span:nth-of-type(2) {
+      filter: blur(10px);
+    }
+
+    .uiverse-loader span:nth-of-type(3) {
+      filter: blur(25px);
+    }
+
+    .uiverse-loader span:nth-of-type(4) {
+      filter: blur(50px);
+    }
+
+    .uiverse-loader::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background-color: #fff;
+      border: solid 5px #ffffff;
+      border-radius: 50%;
+    }
+
+    @keyframes rotate_3922 {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    .loading-text {
+      color: #00e6d8;
+      margin-top: 18px;
+      font-size: 1.2em;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading-page">
+    <div class="uiverse-loader-container">
+      <div class="uiverse-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="loading-text" style="position:absolute;top:calc(50% + 70px);left:50%;transform:translate(-50%,0);">
+      加载中...</div>
+  </div>
+  <nav class="bili-navbar" id="main-navbar">
+    <div class="bili-logo">
+      <img src="../logo.jpg" alt="LOGO">
+      <span>赛博战争俱乐部</span>
+    </div>
+    <ul class="bili-menu" id="navMenu">
+      <li><a href="../index.html">首页</a></li>
+      <li><a href="../Branch/zxqg.html">插件详情</a></li>
+      <li><a href="../Branch/Server rules.html">服务器规则</a></li>
+      <li><a href="../index.html#join">服务器信息</a></li>
+      <li><a href="../404.html">服务器历史</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)">其他 <span style="font-size:0.9em;">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="">OA</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="user-info" id="userInfo"></div>
+  </nav>
+  <div class="container">
+    <header class="header">
+      <h1>服务器管理团队</h1>
+      <p class="subtitle">我们的OP团队，保障您的游戏体验</p>
+    </header>
+    <main class="main-content">
+      <section class="op-team">
+        <h2>服主:</h2>
+        <div class="op-leader" style="display: flex; justify-content: center; margin-bottom: 32px;">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/Wearer.jpg" alt="服主头像">
+                </div>
+                <div class="name">老白</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  于19年成立CYBER WAR CLUB致力打造国服SQUAD公益服务器 维护社区游戏环境。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：NonmoneyNofxxk 请标注来意')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2>团队人员:</h2>
+        <div class="op-list">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op2.jpg" alt="管理员2头像">
+                </div>
+                <div class="name">吃不饱</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  无人知道。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('并未提供联系信息')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op3.jpg" alt="管理员3头像">
+                </div>
+                <div class="name">IEL</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  你还有很多东西需要学习。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：IEL65491 请标注来意')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op4.jpg" alt="管理员4头像">
+                </div>
+                <div class="name">纯爱党万岁</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  就喜欢纯爱
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：jbc15140615461 请标注来意')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op5.jpg" alt="管理员5头像">
+                </div>
+                <div class="name">FALL</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  无人知道。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('并未提供联系信息')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op6.jpg" alt="管理员6头像">
+                </div>
+                <div class="name">bjs青春(实习)</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  喜欢旅游，拍摄，运动。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：over890 请标注来意')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op7.jpg" alt="管理员7头像">
+                </div>
+                <div class="name">祈年</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  赛博最有种的男人。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：QN68876761 请标注来意')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op8.jpg" alt="管理员8头像">
+                </div>
+                <div class="name">小零二</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  可可爱爱没有脑袋。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：zerotwozzq 请标注来意')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op9.jpg" alt="管理员9头像">
+                </div>
+                <div class="name">山瓜</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  我是教你做大哥的人。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号或者QQ：1219156821 请标注来意')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op10.jpg" alt="管理员10头像">
+                </div>
+                <div class="name">南方科支没有手</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  无人知道。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('并未提供联系信息')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op11.jpg" alt="管理员11头像">
+                </div>
+                <div class="name">One</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  别问，问就是赛博最强。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('并未提供联系信息')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op12.jpg" alt="管理员12头像">
+                </div>
+                <div class="name">管理员J</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  负责服务器日志分析与问题追踪。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：opj001')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="profile-image">
+                  <img src="../img/op12.jpg" alt="管理员12头像">
+                </div>
+                <div class="name">管理员J</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="description">
+                  负责服务器日志分析与问题追踪。
+                </div>
+                <div class="socialbar">
+                  <span title="点击显示联系信息" style="cursor:pointer;" onclick="alert('微信号：opj001')">
+                    <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="24" cy="24" r="24" fill="#1AAD19" />
+                      <ellipse cx="16" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="32" cy="26" rx="3" ry="2.5" fill="#fff" />
+                      <ellipse cx="24" cy="24" rx="10" ry="8" fill="#fff" fill-opacity="0.15" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <footer class="footer">
+      &copy;2025 赛博战争俱乐部 | 管理团队介绍
+    </footer>
+  </div>
+  <a href="../index.html" class="back-home-btn">返回主页</a>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const loadingPage = document.getElementById('loading-page');
+      if (loadingPage) {
+        loadingPage.classList.add('hide');
+        setTimeout(() => {
+          loadingPage.style.display = 'none';
+        }, 600); 
+      }
+    });
+  </script>
+
+<script type="module" src="../mini/bgmes.js"></script>
+</body>
+
+</html>

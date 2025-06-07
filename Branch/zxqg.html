@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>插件功能与使用说明 - 赛博战争俱乐部</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../mini/mini-player.css">
+    <style>
+        .plugin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: #181c24;
+            color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .plugin-table th,
+        .plugin-table td {
+            border: 1px solid #23283a;
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        .plugin-table th {
+            background: #23283a;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        .plugin-table tr:nth-child(even) {
+            background: #20232b;
+        }
+
+        .plugin-table tr:nth-child(odd) {
+            background: #181c24;
+        }
+
+        .plugin-table td {
+            font-size: 0.98em;
+        }
+
+        .plugin-note {
+            margin: 18px 0 0 0;
+            color: #aaa;
+            font-size: 0.98em;
+            line-height: 1.7;
+        }
+
+        .plugin-keyword {
+            color: #00e6d8;
+            font-weight: bold;
+            font-family: Consolas, monospace;
+        }
+
+        .plugin-section-title {
+            margin-top: 32px;
+            font-size: 1.2em;
+            color: #00e6d8;
+            border-left: 4px solid #00e6d8;
+            padding-left: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .plugin-list {
+            margin: 18px 0 0 0;
+            padding-left: 18px;
+            color: #fff;
+            line-height: 1.7;
+        }
+
+        body {
+            background: #151821;
+        }
+
+        .container {
+            background: #181c24;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+            padding: 32px 24px 24px 24px;
+            margin: 36px auto 24px auto;
+            max-width: 1200px;
+            /* 原900px，改为1200px，更宽 */
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 1.1em;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 12px 2vw;
+                max-width: 100vw;
+            }
+
+            .plugin-table th,
+            .plugin-table td {
+                font-size: 0.92em;
+                padding: 7px 4px;
+            }
+        }
+
+        .back-home-btn {
+            position: fixed;
+            left: 32px;
+            bottom: 32px;
+            z-index: 1000;
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #45eb9d 0%, #00fff7 100%);
+            color: #181c22;
+            font-weight: bold;
+            border: none;
+            border-radius: 24px;
+            font-size: 1.1rem;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0, 255, 231, 0.12);
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .back-home-btn:hover {
+            background: linear-gradient(90deg, #31b4ff 0%, #1bb1f7 100%);
+            color: #fff;
+            box-shadow: 0 4px 24px rgba(0, 255, 231, 0.20);
+            transform: translateY(-2px) scale(1.04);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bili-navbar" id="main-navbar">
+        <div class="bili-logo">
+            <img src="../logo.jpg" alt="LOGO">
+            <span>赛博战争俱乐部</span>
+        </div>
+        <ul class="bili-menu" id="navMenu">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="OPintroduction.html">团队介绍</a></li>
+            <li><a href="Server rules.html">服务器规则</a></li>
+            <li><a href="../index.html#join">服务器信息</a></li>
+            <li><a href="../404.html">服务器历史</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">其他 <span style="font-size:0.9em;">▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="">OA</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="user-info" id="userInfo"></div>
+    </nav>
+    <div class="container">
+        <header class="header">
+            <h1>插件功能与使用说明</h1>
+            <p class="subtitle">本页详细介绍服务器插件的触发关键词、功能与消耗说明</p>
+        </header>
+        <main class="main-content">
+            <div class="plugin-section-title">触发关键词与功能一览</div>
+            <table class="plugin-table">
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>关键词</th>
+                        <th>消耗金额</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>自助跳边</td>
+                        <td><span class="plugin-keyword">STB</span></td>
+                        <td>8.88老白币</td>
+                    </tr>
+                    <tr>
+                        <td>兑换预留位</td>
+                        <td><span class="plugin-keyword">兑换 20 / DH 20</span></td>
+                        <td>根据输入人数额，5老白币兑换1小时<br>(120老白币起兑换，1天起)</td>
+                    </tr>
+                    <tr>
+                        <td>签到</td>
+                        <td><span class="plugin-keyword">签到 / QD</span></td>
+                        <td>每日一次，人数越少积分越多</td>
+                    </tr>
+                    <tr>
+                        <td>击杀</td>
+                        <td><span class="plugin-keyword">KD</span></td>
+                        <td>3老白币</td>
+                    </tr>
+                    <tr>
+                        <td>爆头率</td>
+                        <td><span class="plugin-keyword">爆头率 / BTL</span></td>
+                        <td>2老白币</td>
+                    </tr>
+                    <tr>
+                        <td>刮刮乐</td>
+                        <td><span class="plugin-keyword">刮刮乐 50 / GGL 50</span></td>
+                        <td>3 - 500老白币</td>
+                    </tr>
+                    <tr>
+                        <td>发红包</td>
+                        <td><span class="plugin-keyword">FHB</span> 金额</td>
+                        <td>数量 = 金额</td>
+                    </tr>
+                    <tr>
+                        <td>跨服广播</td>
+                        <td><span class="plugin-keyword">小喇叭 内容</span></td>
+                        <td>100老白币</td>
+                    </tr>
+                    <tr>
+                        <td>跨服广播</td>
+                        <td><span class="plugin-keyword">大喇叭 内容</span></td>
+                        <td>1000老白币</td>
+                    </tr>
+                    <tr>
+                        <td>个人开启伤害提示</td>
+                        <td><span class="plugin-keyword">BUFF</span></td>
+                        <td>68老白币 / 6小时</td>
+                    </tr>
+                    <tr>
+                        <td>小队开启伤害提示</td>
+                        <td><span class="plugin-keyword">SQBUFF 小队ID</span><br>（例：SQBUFF 1）</td>
+                        <td>实际人数×68 + 50 = 实际扣费</td>
+                    </tr>
+                    <tr>
+                        <td>悬赏</td>
+                        <td><span class="plugin-keyword">悬赏 xx 金额</span><br>（例：悬赏吃饼他50）</td>
+                        <td>最低50老白币，最高5000老白币</td>
+                    </tr>
+                    <tr>
+                        <td>今日头条</td>
+                        <td><span class="plugin-keyword">头条 / TT</span></td>
+                        <td>免费</td>
+                    </tr>
+                    <tr>
+                        <td>牛子长度</td>
+                        <td><span class="plugin-keyword">牛子长度 / NZCD / 换牛子 / HNZ</span></td>
+                        <td>牛子每日免费查询，换牛子5老白币</td>
+                    </tr>
+                    <tr>
+                        <td>天气</td>
+                        <td><span class="plugin-keyword">天气 / TQ</span></td>
+                        <td>2老白币</td>
+                    </tr>
+                    <tr>
+                        <td>抽奖</td>
+                        <td><span class="plugin-keyword">抽奖 / CJ</span></td>
+                        <td>免费，每次整点可抽奖</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="plugin-section-title">使用说明</div>
+            <ul class="plugin-list">
+                <li>在游戏或聊天窗口输入对应<span class="plugin-keyword">关键词</span>，即可触发相应功能。</li>
+                <li>部分功能需输入参数，如“小队ID”、“金额”等，请按表格示例格式输入。</li>
+                <li>兑换、悬赏等涉及金额的功能，需确保账户余额充足。</li>
+                <li>如遇问题可联系管理员或查看服务器公告。</li>
+            </ul>
+            <div class="plugin-section-title">补充说明</div>
+            <div class="plugin-note">
+                <ul>
+                    <li>查询赛博战争俱乐部货币余额：<span class="plugin-keyword">公屏发 老白币 即可</span></li>
+                    <li>CDK激活方式：直接公屏发送密钥即可,也可以使用本网站提供的在线激活 (注:在线激活需要登录OA系统)</li>
+                    <li>64位充值 立刻到账</li>
+                </ul>
+            </div>
+        </main>
+        <footer class="footer">
+            &copy;2025 赛博战争俱乐部 | 插件功能与使用说明
+        </footer>
+    </div>
+    <a href="../index.html" class="back-home-btn">返回主页</a>
+</body>
+
+<script type="module" src="../mini/bgmes.js"></script>
+
+</html>
