@@ -45,7 +45,7 @@ PlayerCore.AppendSong({
 PlayerCore.AppendSong({
   name: "トゲナシトゲアリ - 空の箱",
   id: "4",
-  src: "https://er-sycdn.kuwo.cn/c16d07b1407b37e1fc0c839822e3dab2/68443b07/resource/30106/trackmedia/M500004E9egv2ctHh1.mp3?bitrate$128&from=vip",
+  src: "https://er-sycdn.kuwo.cn/0e2693c0b95588197bdb3a7c3a2a94a3/6844676b/resource/30106/trackmedia/M500004E9egv2ctHh1.mp3?bitrate$128&from=vip",
   img: "https://imgessl.kugou.com/stdmusic/20250328/20250328182949724383.jpg"
 });
 
